@@ -56,19 +56,22 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: TextButton(
-                  onPressed: () {
-                    setState(() {
-                      storyBrain.nextStory(1);
-                    });
-                  },
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.red,
-                  ),
-                  child: Text(
-                    storyBrain.getFirstChoice(),
-                    style: const TextStyle(
-                      fontSize: 20.0,
+                child: Visibility(
+                  visible: storyBrain.buttonShouldBeVisible(),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        storyBrain.nextStory(1);
+                      });
+                    },
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.red,
+                    ),
+                    child: Text(
+                      storyBrain.getFirstChoice(),
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                 ),
@@ -78,19 +81,22 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: TextButton(
-                  onPressed: () {
-                    setState(() {
-                      storyBrain.nextStory(2);
-                    });
-                  },
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.blue,
-                  ),
-                  child: Text(
-                    storyBrain.getSecondChoice(),
-                    style: const TextStyle(
-                      fontSize: 20.0,
+                child: Visibility(
+                  visible: storyBrain.buttonShouldBeVisible(),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        storyBrain.nextStory(2);
+                      });
+                    },
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.blue,
+                    ),
+                    child: Text(
+                      storyBrain.getSecondChoice(),
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                 ),
