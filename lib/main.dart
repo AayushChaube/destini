@@ -1,5 +1,6 @@
-import 'package:destini/story_brain.dart';
 import 'package:flutter/material.dart';
+
+import 'story_brain.dart';
 
 void main() => runApp(const Destini());
 
