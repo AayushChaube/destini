@@ -10,6 +10,7 @@ class Destini extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: const StoryPage(),
     );
@@ -57,22 +58,19 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: Visibility(
-                  visible: storyBrain.buttonShouldBeVisible(),
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        storyBrain.nextStory(1);
-                      });
-                    },
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.red,
-                    ),
-                    child: Text(
-                      storyBrain.getFirstChoice(),
-                      style: const TextStyle(
-                        fontSize: 20.0,
-                      ),
+                child: TextButton(
+                  onPressed: () {
+                    setState(() {
+                      storyBrain.nextStory(1);
+                    });
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.red,
+                  ),
+                  child: Text(
+                    storyBrain.getFirstChoice(),
+                    style: const TextStyle(
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
